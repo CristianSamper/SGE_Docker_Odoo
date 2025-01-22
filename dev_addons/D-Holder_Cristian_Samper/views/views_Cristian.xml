@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <!--explicit list view definition-->
+
+    <redord model="ir.ui.view" id="D-Holder.modelo1.list">
+        <field name="name">D-Holder Modelo1 list</list>
+        <field name="model">D-Holder.modelo1</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--acions opening views on models-->
+
+    <record model="ir.actions.act_window" id="D-Holder.action_modelo1_window">
+      <field name="name">D-Holder Modelo1 window</field>
+      <field name="res_model">D-Holder.modelo1</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!--server action to the one above-->
+
+
+    <!--Top menu item-->
+    <menuitem name="D-Holder" id="D-Holder.menu_root"/>
+
+    <!--Menu categories-->
+
+    <menuitem name="Menu1" id="D-Holder.menu_1" parent="D-Holder.menu_root"/>
+    
+    <!-- actions -->
+
+    <menuitem name="Accion" id="D-Holder.menu_1_accion" parent="D-Holder.menu_1"
+              action="D-Holder.action_modelo1_window"/>
+
+  </data>
+</odoo>
